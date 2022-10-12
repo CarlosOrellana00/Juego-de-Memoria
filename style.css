@@ -1,0 +1,100 @@
+:root {
+  --w: calc(70vw / 6);
+  --h: calc(70vh / 4);
+}
+
+* {
+  transition: all 0.5s;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #B0E0E6;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg fill-opacity='0.67'%3E%3Ccircle fill='%23B0E0E6' cx='50' cy='0' r='50'/%3E%3Cg fill='%23a4dfe2' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%2398dedc' cx='50' cy='100' r='50'/%3E%3Cg fill='%238dddd4' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%2385dccb' cx='50' cy='200' r='50'/%3E%3Cg fill='%2380dabf' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%237dd8b3' cx='50' cy='300' r='50'/%3E%3Cg fill='%237ed6a5' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%2381d396' cx='50' cy='400' r='50'/%3E%3Cg fill='%2387d086' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%238ecc75' cx='50' cy='500' r='50'/%3E%3Cg fill='%2397c764' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a1c254' cx='50' cy='600' r='50'/%3E%3Cg fill='%23abbd42' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b6b631' cx='50' cy='700' r='50'/%3E%3Cg fill='%23c2af1f' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23cea707' cx='50' cy='800' r='50'/%3E%3Cg fill='%23db9e00' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23e79400' cx='50' cy='900' r='50'/%3E%3Cg fill='%23f38800' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23FF7B00' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: contain;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: calibri;
+}
+
+div {
+  display: inline-block;
+}
+
+.area-tarjeta, .tarjeta, .cara {
+  cursor: pointer;
+  width: var(--w);
+  min-width: 100px;
+  height: var(--h);
+}
+
+.tarjeta {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: iniciar 5s;
+}
+
+.cara {
+  position: absolute;
+  backface-visibility: hidden;
+  box-shadow: inset 0 0 0 5px #ffffff;
+  font-size: 500%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trasera {
+  background-color: #83b2d9;
+  transform: rotateY(180deg);
+}
+
+.trasera:hover{
+  background-color: #ff7b00;
+}
+
+.superior {
+  background: #808080;
+}
+
+.superior:hover{
+  background-color: #a0a0a0;
+}
+
+
+.nuevo-juego {
+  cursor: pointer;
+  background-color: #ff7b00;
+  padding: 20px;
+  border-radius: 50px;
+  border: #ffffff 5px solid;
+  font-size: 130%;
+  display: inline-block;
+}
+
+.nuevo-juego:hover{
+  background-color: #ff9c40;
+}
+
+#puntos {
+  display: inline-block;
+  font-size: 300%;
+  margin-left: 30px;
+}
+
+@keyframes iniciar {
+  20%,
+  90% {
+      transform: rotateY(180deg);
+  }
+  0%,
+  100% {
+      transform: rotateY(0deg);
+  }
+}
