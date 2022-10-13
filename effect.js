@@ -2,6 +2,8 @@
 let puntos;
 let iconos = []
 let selecciones = []
+const casino = document.getElementById('tablero')
+const musica = new Audio('assets/pokemon_casino_g&s.mp3')
 
 generarTablero()
 
@@ -70,10 +72,16 @@ function deseleccionar(selecciones) {
       tarjeta1.style.transform = "rotateY(0deg)"
       tarjeta2.style.transform = "rotateY(0deg)"
     } else {
-      trasera1.style.background = "#5e2129"
-      trasera2.style.background = "#5e2129"
+      trasera1.style.background = "#e7bd42"
+      trasera2.style.background = "#e7bd42"
       puntos++;
       document.getElementById("puntos").innerHTML = "Puntos: " + puntos
     }
   }, 1000);
 }
+
+function playSound(){
+  musica.play()
+}
+
+casino.addEventListener('click',()=>playSound())
